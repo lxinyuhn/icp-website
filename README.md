@@ -51,7 +51,7 @@ If you are hosting frontend code somewhere without using DFX, you may need to ma
 - Write your own `createActor` constructor
 
 
-### bash
+### bash lesson 1
 
 ```bash
 
@@ -74,5 +74,16 @@ dfx deploy --network=ic --with-cycles=400000000000
 #del
 dfx canister --network=ic stop --all
 dfx canister --network=ic delete --all
+
+```
+
+## base lesson 2
+
+```bash
+
+moc --package base $(dfx cache show)/base -r src/mysite/main.mo
+dfx canister call mysite fibonacci '(10: nat)' 
+
+dfx canister call mysite qsort '(vec{9;8;7;6;5;4;3;2;1})' 
 
 ```
